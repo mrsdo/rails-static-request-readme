@@ -1,0 +1,111 @@
+Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+
+    current directory: /Users/mj163/.rvm/gems/ruby-2.6.1/gems/puma-4.3.5/ext/puma_http11
+/Users/mj163/.rvm/rubies/ruby-2.6.1/bin/ruby -I /Users/mj163/.rvm/rubies/ruby-2.6.1/lib/ruby/site_ruby/2.6.0 -r ./siteconf20210118-88767-1t93u0x.rb extconf.rb
+checking for BIO_read() in -lcrypto... yes
+checking for SSL_CTX_new() in -lssl... yes
+checking for openssl/bio.h... yes
+checking for DTLS_method() in openssl/ssl.h... yes
+checking for TLS_server_method() in openssl/ssl.h... yes
+checking for SSL_CTX_set_min_proto_version in openssl/ssl.h... yes
+creating Makefile
+
+current directory: /Users/mj163/.rvm/gems/ruby-2.6.1/gems/puma-4.3.5/ext/puma_http11
+make "DESTDIR=" clean
+
+current directory: /Users/mj163/.rvm/gems/ruby-2.6.1/gems/puma-4.3.5/ext/puma_http11
+make "DESTDIR="
+compiling http11_parser.c
+ext/puma_http11/http11_parser.c:44:18: warning: unused variable 'puma_parser_en_main' [-Wunused-const-variable]
+static const int puma_parser_en_main = 1;
+                 ^
+1 warning generated.
+compiling io_buffer.c
+compiling mini_ssl.c
+mini_ssl.c:145:7: warning: unused variable 'min' [-Wunused-variable]
+  int min, ssl_options;
+      ^
+mini_ssl.c:299:40: warning: function 'raise_error' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+void raise_error(SSL* ssl, int result) {
+                                       ^
+2 warnings generated.
+compiling puma_http11.c
+puma_http11.c:203:22: error: implicitly declaring library function 'isspace' with type 'int (int)' [-Werror,-Wimplicit-function-declaration]
+  while (vlen > 0 && isspace(value[vlen - 1])) vlen--;
+                     ^
+puma_http11.c:203:22: note: include the header <ctype.h> or explicitly provide a declaration for 'isspace'
+1 error generated.
+make: *** [puma_http11.o] Error 1
+
+make failed, exit code 2
+
+Gem files will remain installed in /Users/mj163/.rvm/gems/ruby-2.6.1/gems/puma-4.3.5 for inspection.
+Results logged to /Users/mj163/.rvm/gems/ruby-2.6.1/extensions/x86_64-darwin-20/2.6.0/puma-4.3.5/gem_make.out
+
+An error occurred while installing puma (4.3.5), and Bundler cannot continue.
+Make sure that `gem install puma -v '4.3.5' --source 'https://rubygems.org/'` succeeds before bundling.
+
+In Gemfile:
+  puma
+mj163@dolcehome rails-static-request-readme % gem install puma:4.3.5 -- --with-cflags="-Wno-error=implicit-function-declaration"
+Building native extensions with: '--with-cflags=-Wno-error=implicit-function-declaration'
+This could take a while...
+Successfully installed puma-4.3.5
+1 gem installed
+mj163@dolcehome rails-static-request-readme % gem install puma -v '4.3.5
+quote> '
+Building native extensions. This could take a while...
+ERROR:  Error installing puma:
+        ERROR: Failed to build gem native extension.
+
+    current directory: /Users/mj163/.rvm/gems/ruby-2.6.1/gems/puma-4.3.5/ext/puma_http11
+/Users/mj163/.rvm/rubies/ruby-2.6.1/bin/ruby -I /Users/mj163/.rvm/rubies/ruby-2.6.1/lib/ruby/site_ruby/2.6.0 -r ./siteconf20210118-7930-174pk2r.rb extconf.rb
+checking for BIO_read() in -lcrypto... yes
+checking for SSL_CTX_new() in -lssl... yes
+checking for openssl/bio.h... yes
+checking for DTLS_method() in openssl/ssl.h... yes
+checking for TLS_server_method() in openssl/ssl.h... yes
+checking for SSL_CTX_set_min_proto_version in openssl/ssl.h... yes
+creating Makefile
+
+current directory: /Users/mj163/.rvm/gems/ruby-2.6.1/gems/puma-4.3.5/ext/puma_http11
+make "DESTDIR=" clean
+
+current directory: /Users/mj163/.rvm/gems/ruby-2.6.1/gems/puma-4.3.5/ext/puma_http11
+make "DESTDIR="
+compiling http11_parser.c
+ext/puma_http11/http11_parser.c:44:18: warning: unused variable 'puma_parser_en_main' [-Wunused-const-variable]
+static const int puma_parser_en_main = 1;
+                 ^
+1 warning generated.
+compiling io_buffer.c
+compiling mini_ssl.c
+mini_ssl.c:145:7: warning: unused variable 'min' [-Wunused-variable]
+  int min, ssl_options;
+      ^
+mini_ssl.c:299:40: warning: function 'raise_error' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+void raise_error(SSL* ssl, int result) {
+                                       ^
+2 warnings generated.
+compiling puma_http11.c
+puma_http11.c:203:22: error: implicitly declaring library function 'isspace' with type 'int (int)' [-Werror,-Wimplicit-function-declaration]
+  while (vlen > 0 && isspace(value[vlen - 1])) vlen--;
+                     ^
+puma_http11.c:203:22: note: include the header <ctype.h> or explicitly provide a declaration for 'isspace'
+1 error generated.
+make: *** [puma_http11.o] Error 1
+
+make failed, exit code 2
+
+Gem files will remain installed in /Users/mj163/.rvm/gems/ruby-2.6.1/gems/puma-4.3.5 for inspection.
+Results logged to /Users/mj163/.rvm/gems/ruby-2.6.1/extensions/x86_64-darwin-20/2.6.0/puma-4.3.5/gem_make.out
+mj163@dolcehome rails-static-request-readme % learn whoami
+zsh: command not found: learn
+mj163@dolcehome rails-static-request-readme % rspec
+No examples found.
+
+
+Finished in 0.00034 seconds (files took 0.07529 seconds to load)
+0 examples, 0 failures
+
+mj163@dolcehome rails-static-request-readme %
